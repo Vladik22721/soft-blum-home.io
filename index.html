@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="ua">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>SoFtBlUm</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(to right, #ff7e5f, #feb47b);
+        }
+
+        #main {
+            text-align: center;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 250px;
+            height: 500px; /* Decreased height to maintain compactness */
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            margin-top: 50px; /* Move the entire content down by 50px */
+        }
+
+        #title {
+            display: flex;
+            align-items: center;
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        #title img {
+            height: 40px; /* Adjust the size of the logo as needed */
+            margin-right: 10px;
+        }
+
+        #tutorial {
+            flex: 1; /* Allow the tutorial section to expand */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px; /* Optional margin bottom for spacing */
+        }
+
+        #tutorial-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        #tokenInput {
+            margin: 20px 0;
+        }
+
+        #tokenInput label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        #tokenInput input {
+            padding: 10px;
+            width: calc(100% - 20px);
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        #content {
+            flex: 1; /* Allow the content section to expand */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px; /* Optional margin bottom for spacing */
+        }
+
+        #counter {
+            display: flex;
+            align-items: center;
+            text-align: left; /* Align counter to the left */
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        #counter img {
+            height: 24px; /* Adjust the size of the icon as needed */
+            margin-right: 10px;
+        }
+
+        #startButton {
+            width: 100%; /* Make the button take full width */
+            padding: 15px 0; /* Adjust padding for the button */
+            font-size: 16px;
+            background-color: #ff7e5f;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        #startButton:hover {
+            transform: scale(1.05);
+        }
+
+        #footer {
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+        }
+
+        .footer-button {
+            background: none;
+            border: none;
+            font-size: 16px;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .footer-button:hover {
+            color: #ff7e5f;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="main">
+        <div id="title">
+            <img src="th.jpg" alt="Logo"> <!-- Replace "th.jpg" with the path to your logo -->
+            SoFtBlUm
+        </div>
+        <div class="flex-container">
+            <div id="tutorial">
+                <div id="tutorial-title">Tutorial</div>
+                <video width="100%" controls>
+                    <source src="video.mp4" type="video/mp4"> <!-- Replace "tutorial.mp4" with the path to your video -->
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div id="content">
+                <div id="tokenInput">
+                    <label for="token">Token:</label>
+                    <input type="text" id="token" name="token">
+                </div>
+                <button id="startButton">buy</button>
+                <div id="counter">
+                    <img src="tikets.png" alt="Tickets"> <!-- Replace "tikets.png" with the path to your image -->
+                    0
+                </div>
+            </div>
+        </div>
+        <div id="footer">
+            <button class="footer-button" id="homeButton">Home</button>
+            <button class="footer-button" id="shopButton">Shop</button>
+        </div>
+    </div>
+
+    <script>
+        const startButton = document.getElementById('startButton');
+
+        startButton.addEventListener('click', () => {
+            if (startButton.textContent === 'buy') {
+                startButton.style.backgroundColor = 'gray';
+                startButton.textContent = 'Stop';
+            } else {
+                startButton.style.backgroundColor = '#ff7e5f';
+                startButton.textContent = 'buy';
+            }
+        });
+    </script>
+</body>
+
+</html>
